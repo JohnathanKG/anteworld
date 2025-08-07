@@ -1,0 +1,20 @@
+"This is a Bazel module file for the outerra_plugins module."
+module(
+    name = "outerra_plugins",
+    version = "0.1.0",
+)
+
+
+bazel_dep(
+    name = "incl",
+    version = "1.0.0"
+)
+local_path_override(
+    module_name = "incl",
+    path = "../include",
+)
+
+bazel_dep(
+    name = "rules_cc",
+    version = "0.1.4",
+)
