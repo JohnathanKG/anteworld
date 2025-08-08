@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "type": "cppvsdbg",
+      "request": "launch",
+      "name": "Debug C++ Plugin",
+      "program": "C:/Program Files/Outerra/Anteworld/outerra.exe",
+      "environment": [],
+      "console": "internalConsole",
+      "symbolOptions": {
+        "searchPaths": [
+          "${workspaceFolder}/example/bazel-bin/vehicle_plugin",
+          "C:/Program Files/Outerra/Anteworld/plugins"
+        ],
+        "searchMicrosoftSymbolServer": false,
+        "moduleFilter": {
+          "mode": "loadOnlyIncluded",
+          "includedModules": [
+            "vehicle_plugin.dll"
+          ]
+        }
+      },
+      "cwd": "${workspaceFolder}/example/vehicle_plugin",
+      "stopAtEntry": false,
+    }
+  ],
+}

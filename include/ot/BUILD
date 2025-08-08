@@ -6,17 +6,21 @@ cc_library(
         include = [
             "*.cpp",
             "**/*.cpp",
-        ]
+        ],
     ),
     hdrs = glob(
         include = [
             "*.h",
             "**/*.h",
-        ]
+        ],
     ),
-    deps = [
-        "@incl//comm:comm_static",
-        "@incl//glm:glm",
+    copts = [
+        "/MP",
+        "/Od",
     ],
     visibility = ["//visibility:public"],
+    deps = [
+        "@incl//comm:comm_static",
+        "@incl//glm",
+    ],
 )

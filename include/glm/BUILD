@@ -12,7 +12,7 @@ cc_library(
     ),
     copts = [
         "/MP",
-        "/Od"
+        "/Od",
     ],
     visibility = ["//visibility:public"],
 )

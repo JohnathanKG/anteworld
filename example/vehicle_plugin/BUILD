@@ -1,15 +1,18 @@
 # add module from parent of parent directory
 load("@rules_cc//cc:cc_binary.bzl", "cc_binary")
+
 cc_binary(
-    name = "vehicle",
+    name = "vehicle_plugin",
     srcs = glob([
         "*.cpp",
         "*.hpp",
         "ifc/*.h",
     ]),
     copts = [
-        "/MP",
         "/Od",
+    ],
+    features = [
+        "generate_pdb_file",
     ],
     linkshared = 1,
     deps = [

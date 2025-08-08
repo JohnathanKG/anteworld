@@ -1,0 +1,33 @@
+{
+  "tasks": [
+    {
+        "type": "shell",
+        "label": "build",
+        "command": "bazel",
+        "args": [
+            "build",
+            "//vehicle_plugin:vehicle_plugin",
+            "--copt=/DEBUG:FULL",
+            "--copt=/Z7",
+            "--copt=/Od",
+            "--copt=/MP",
+            "--features=generate_pdb_file",
+            "--output_groups=pdb_file,default",
+            "-c",
+            "dbg",
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        },
+        "presentation": {
+            "reveal": "always",
+            "panel": "new"
+        },
+        "options": {
+            "cwd": "${workspaceFolder}/example/"
+        },
+        "problemMatcher": []
+    }
+],
+}
