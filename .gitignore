@@ -19,3 +19,5 @@
 *.tmp
 BuildLog.htm
 *.log
+**/bazel-*
+*.bazel.lock
