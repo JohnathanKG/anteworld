@@ -8,7 +8,7 @@
 // ifc{
 #include <ot/gameob.h>
 #include <ot/vehicle_physics.h>
-
+#include <ot/canvas.h>
 //}ifc
 
 // These variables can be global and initialized, as they are only used in
@@ -34,22 +34,16 @@ class simplugin : public ot::vehicle_physics {
                                const coid::range<int32> &actbuf) override;
 
   private:
-    // Declare variables
+    void fill_wheel_params(ot::wheel &wheel_params);
+    void fill_vehicle_params(ot::vehicle_params &vehicle_params);
+
     bool Started;
     bool Emer;
     int EngDir;
     int Lturn;
     int Rturn;
-    int32 mod_act = 0;
     double Time;
 
-    // Use static keyword, so that the variable can be shared across all
-    // instances (familiar to creating global variable) without it, the
-    // variables would be defined only for the 1. instance/vehicle, other
-    // instances would have variables set to 0, because they are defined in
-    // init_chassis(), which is called only the first time. Use only for
-    // variables, that will be shared across all instances/vehicles and will not
-    // be changed later (should be defined in init_chassis)
     static uint RevMask;
     static uint BrakeMask;
     static uint TurnLeftMask;
@@ -69,13 +63,10 @@ class simplugin : public ot::vehicle_physics {
     static int SndEngOFF;
     static int SrcOnOff;
     static int SrcEngOn;
+    /// mod action
+    static int32 mod_act;
 
-    // Spot and point light parameters
-    ot::light_params LightParams =
-        ot::light_params(); // Initializes all fields to 0
-
-    // Geom and Sounds are smart pointers, pointing to geomob and sound groups,
-    // they are used for managing reference-counted objects
     iref<ot::geomob> Geom = nullptr;
     iref<ot::sndgrp> Sounds = nullptr;
+    iref<ot::canvas> Canvas = ot::canvas::create("main");
 };
