@@ -40,7 +40,7 @@ class simplugin : public ot::vehicle_physics {
     int EngDir;
     int Lturn;
     int Rturn;
-    int32 mod_act;
+    int32 mod_act = 0;
     double Time;
 
     // Use static keyword, so that the variable can be shared across all

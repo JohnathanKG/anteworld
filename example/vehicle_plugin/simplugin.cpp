@@ -51,13 +51,15 @@ void simplugin::update_actions_script(float dt,
                                       const coid::range<int32> &actbuf) {
     for (const int8 act : actbuf) {
         if (act == mod_act) {
+            fire(float3(-0.9f, 9.4f, 9.3f), float3(0.0f, 1.0f, 0.0f),
+                 100.0f, 10.0f, float3(1.0f, 1.0f, 1.0f), pkg::InvalidBoneId);
             coidlog_info("action", "mod button pressed");
         }
     }
 }
 
 ot::vehicle_params simplugin::init_chassis(const coid::token &params) {
-    mod_act = register_event_ext("ot/player/mod");
+    this->mod_act = this->register_event_ext("ot/player/mod");
     ot::wheel *wheelParam = new ot::wheel();
     wheelParam->radius1 = 0.31515f; // outer tire radius [m]
     wheelParam->width = 0.2f;       // tire width [m]
@@ -116,8 +118,6 @@ ot::vehicle_params simplugin::init_chassis(const coid::token &params) {
 }
 
 void simplugin::init_vehicle(bool reload) {
-    // Initialize variables for your instance (use "this" keyword for changes to
-    // affect only current instance)
     this->Emer = false;
     this->Started = false;
     this->Time = 0.f;
@@ -125,9 +125,7 @@ void simplugin::init_vehicle(bool reload) {
     this->Rturn = 0;
     this->EngDir = 1;
 
-    // Get geomob interface
     this->Geom = get_geomob(0);
-    // Get sound interface
     this->Sounds = sound();
 
     // Set FPS camera position
