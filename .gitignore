@@ -19,3 +19,7 @@
 *.tmp
 BuildLog.htm
 *.log
+*.bazel.lock
+**/bazel-*
+**/.vs
+**/bin

@@ -1,29 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="vehicle_plugin.cpp" />
     <ClCompile Include="simplugin.cpp" />
-    <ClCompile Include="simplugin.intergen.cpp" />
-    <ClCompile Include="simplugin.intergen.js.cpp" />
-    <ClCompile Include="simplugin.intergen.lua.cpp" />
+    <ClCompile Include="vehicle_plugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <hpp Include="simplugin.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ifc">
-      <UniqueIdentifier>{884fc570-9000-4c58-85c6-d8695bb1b333}</UniqueIdentifier>
+      <UniqueIdentifier>{877d7f07-0ee2-44c2-a7f3-f402798ecdf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ifc\js">
+      <UniqueIdentifier>{46357953-9c36-491d-9216-501a29b5e353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ifc\lua">
+      <UniqueIdentifier>{9c9d35ed-94dd-488f-baa0-4fc822e2697d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ifc\engine.h">
       <Filter>ifc</Filter>
     </ClInclude>
-    <ClInclude Include="ifc\engine.js.h">
-      <Filter>ifc</Filter>
+    <ClInclude Include="ifc\lua\engine.h">
+      <Filter>ifc\lua</Filter>
     </ClInclude>
-    <ClInclude Include="ifc\engine.lua.h">
-      <Filter>ifc</Filter>
+    <ClInclude Include="ifc\js\engine.h">
+      <Filter>ifc\js</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <hpp Include="simplugin.hpp" />
   </ItemGroup>
 </Project>

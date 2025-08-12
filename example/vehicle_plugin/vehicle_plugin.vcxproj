@@ -20,9 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="simplugin.cpp" />
-    <ClCompile Include="simplugin.intergen.cpp" />
-    <ClCompile Include="simplugin.intergen.js.cpp" />
-    <ClCompile Include="simplugin.intergen.lua.cpp" />
     <ClCompile Include="vehicle_plugin.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -31,14 +28,14 @@
     </hpp>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ifc\engine.h" />
-    <ClInclude Include="ifc\engine.js.h" />
-    <ClInclude Include="ifc\engine.lua.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\include\comm\_build\msvc\2022\comm_static.vcxproj">
+    <ProjectReference Include="..\..\include\comm\_build\msvc\2019\comm_static.vcxproj">
       <Project>{d2f47060-00c0-4a3c-9888-cf663f14d44d}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ifc\engine.h" />
+    <ClInclude Include="ifc\js\engine.h" />
+    <ClInclude Include="ifc\lua\engine.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -100,6 +97,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir).obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -135,13 +133,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;VEHICLEPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLM_ENABLE_EXPERIMENTAL;_DEBUG;VEHICLEPLUGIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalIncludeDirectories>$(SolutionDir)../include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <StringPooling>true</StringPooling>
+      <AdditionalOptions>/MJ %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

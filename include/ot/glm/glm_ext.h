@@ -212,9 +212,9 @@ const float PI = 3.14159265358979323846f; //3.1415926535897932384626433832795028
 const float PI_OVER_2 = 1.57079632679489661923f;
 const float PI_OVER_4 = 0.78539816339744830962f;
 
-const float3 FLOAT3_ZERO;
-const double3 DOUBLE3_ZERO;
-const quat QUAT_IDENTITY;
+const float3 FLOAT3_ZERO = { 0, 0, 0 };
+const double3 DOUBLE3_ZERO = { 0, 0, 0 };
+const quat QUAT_IDENTITY = { 0, 0, 0, 1 };
 
 
 template<typename T>

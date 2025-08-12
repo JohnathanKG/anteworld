@@ -7,19 +7,28 @@
     <ClCompile Include="plugin.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <hpp Include="plugin.hpp" />
+  </ItemGroup>
+  <ItemGroup>
     <Filter Include="ifc">
-      <UniqueIdentifier>{27ccea8e-23c8-4be3-b1ab-597c3d5dd967}</UniqueIdentifier>
+      <UniqueIdentifier>{6c333f53-7ebc-4d3f-9fe0-5ec985f113c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ifc\lua">
+      <UniqueIdentifier>{6a6a4fa5-04a2-4b8b-b65a-ca62f334bcdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ifc\js">
+      <UniqueIdentifier>{dfbbff3c-e66c-4099-867e-bf817f681468}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ifc\plugin_interface.h">
       <Filter>ifc</Filter>
     </ClInclude>
-    <ClInclude Include="ifc\plugin_interface.js.h">
-      <Filter>ifc</Filter>
+    <ClInclude Include="ifc\lua\plugin_interface.h">
+      <Filter>ifc\lua</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <hpp Include="plugin.hpp" />
+    <ClInclude Include="ifc\js\plugin_interface.h">
+      <Filter>ifc\js</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
