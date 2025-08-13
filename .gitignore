@@ -1,3 +1,5 @@
+**/.vs
+**/bin
 *.tlog
 *.intergen.h
 *.intergen.cpp
@@ -17,9 +19,5 @@
 *.manifest
 *.res
 *.tmp
-BuildLog.htm
 *.log
-*.bazel.lock
-**/bazel-*
-**/.vs
-**/bin
+BuildLog.htm
