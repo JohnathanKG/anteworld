@@ -154,13 +154,13 @@ struct bone_data {
     {}
 
     bone_data(const bone_data_old &bd)
-        : _rot(glm::quat_cast(bd._mat))
-        , _dual(glm::to_dquat(_rot, glm::xyz(bd._mat[3])))
+        : _rot(glm::gtc::quat_cast(bd._mat))
+        , _dual(glm::to_dquat(_rot, glm::gtx::xyz(bd._mat[3])))
     {}
 
     bone_data(const float4x4 &m)
-        : _rot(glm::quat_cast(m))
-        , _dual(glm::to_dquat(_rot, glm::xyz(m[3])))
+        : _rot(glm::gtc::quat_cast(m))
+        , _dual(glm::to_dquat(_rot, glm::gtx::xyz(m[3])))
     {}
 };
 

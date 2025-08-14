@@ -2,8 +2,7 @@
 #ifndef _OT_GLM_TYPES_H_
 #define _OT_GLM_TYPES_H_
 
-#include <glm/glm.hpp>
-#include <glm/gtx/quaternion.hpp>
+import glm;
 
 #include <comm/commtypes.h>
 
@@ -61,22 +60,26 @@ typedef glm::u8vec4 u8vec4;
 typedef glm::u8vec3 u8vec3;
 typedef glm::u8vec2 u8vec2;
 
-template <int N>
-struct hvec {
-    glm::detail::hdata data[N];
+
+template <int N> struct hvec {
+    static_assert(N <= 4, "hvec only supports N <= 4 with this implementation");
+    short data[4] = {0};
 
     glm::vec<N, float> to_float_vec() const {
         glm::vec<N, float> v;
-        for (int i = 0; i<N; ++i)
-            v[i] = glm::detail::toFloat32(data[i]);
+        __m128 half_floats = _mm_cvtph_ps(*(__m128i *)data);
+        _mm_store_ps(glm::gtc::value_ptr(v), half_floats);
         return v;
     }
 
-    void from_float_vec(const glm::vec<N, float>& v) {
-        for (int i = 0; i<N; ++i)
-            data[i] = glm::detail::toFloat16(v[i]);
+    void from_float_vec(const glm::vec<N, float> &v) {
+        __m128 values = _mm_set_ps(N >= 4 ? v[3] : 0.f, N >= 3 ? v[2] : 0.f,
+                                   N >= 2 ? v[1] : 0.f, v[0]);
+        __m128i half_values = _mm_cvtps_ph(values, _MM_FROUND_TO_NEAREST_INT);
+        _mm_storeu_si64((__m64 *)&data[0], half_values);
     }
 };
+
 
 using half2 = hvec<2>;
 using half3 = hvec<3>;

@@ -2660,6 +2660,7 @@ export namespace glm {
 		using glm::value_ptr;
 		using glm::wrapAngle;
 		using glm::wxyz;
+		using glm::xyz;
 		using glm::yaw;
 		using glm::yawPitchRoll;
 		using glm::zero;

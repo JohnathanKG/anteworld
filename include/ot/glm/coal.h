@@ -1,6 +1,5 @@
 #pragma once
-
-#include <glm/glm.hpp>
+import glm;
 #include <comm/commtypes.h>
 
 
@@ -88,7 +87,7 @@ namespace coal
     //////////////////////////////////////////////////////////////
 
     /*
-    Christer Ericson’s Real-time Collision Detection
+    Christer Ericsonï¿½s Real-time Collision Detection
     Page 46, 3.4 Barycentric Coordinates
     */
 
@@ -566,7 +565,7 @@ namespace coal
     }
 
     /*
-    Christer Ericson’s Real-time Collision Detection
+    Christer Ericsonï¿½s Real-time Collision Detection
     Page 136, 5.1.5 Closest Point on Triangle to Point
     */
 
@@ -666,7 +665,7 @@ namespace coal
     }
 
     /*
-        Christer Ericson’s Real-time Collision Detection
+        Christer Ericsonï¿½s Real-time Collision Detection
         Page 129, 5.1.2.1 Distance of Point to Segment
     */
 
@@ -683,7 +682,7 @@ namespace coal
     }
 
     /*
-    Christer Ericson’s Real-time Collision Detection
+    Christer Ericsonï¿½s Real-time Collision Detection
     Page 148, 5.1.9 Closest Points of Two Line Segments
     */
 
@@ -751,7 +750,7 @@ namespace coal
     }
 
     /*
-    Christer Ericson’s Real-time Collision Detection
+    Christer Ericsonï¿½s Real-time Collision Detection
     Page 153, 5.1.10 Closest Points of a Line Segment and a Triangle
     */
 
@@ -930,8 +929,8 @@ namespace coal
     }
 
     /*
-    [Möller97a] Möller, Tomas. Ben Trumbore. “Fast, Minimum-storage Ray/
-    Triangle Intersection,” Journal of Graphics Tools, vol. 2, no. 1, pp. 21–28, 1997.
+    [Mï¿½ller97a] Mï¿½ller, Tomas. Ben Trumbore. ï¿½Fast, Minimum-storage Ray/
+    Triangle Intersection,ï¿½ Journal of Graphics Tools, vol. 2, no. 1, pp. 21ï¿½28, 1997.
     http://www.graphics.cornell.edu/pubs/1997/MT97.html
     */
 

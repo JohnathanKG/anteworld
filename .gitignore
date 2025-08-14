@@ -1,4 +1,4 @@
-builddir
+build
 **/.vs
 **/bin
 *.tlog
